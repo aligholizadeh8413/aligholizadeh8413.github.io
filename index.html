@@ -1,27 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Gholizadeh | Software Developer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Gholizadeh — Backend Developer</title>
+<meta name="description" content="Ali Gholizadeh — Computer Science student and aspiring backend developer working with Python, Django, and real backend systems.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0b' stroke='%23ff6a35' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='700' fill='%23ff6a35' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Ali Gholizadeh</h1>
-            <p class="subtitle">Backend Developer & System Engineer</p>
-        </header>
 
-        <section class="about">
-            <p>Hello! I'm Ali, a passionate software developer specializing in building scalable backend systems and infrastructure. Currently working on <strong>AioDesk</strong>, an RMM platform.</p>
-        </section>
+<a class="skip-link" href="#main">Skip to content</a>
 
-        <section class="links">
-            <a href="https://github.com/aligholizadeh8413" target="_blank">GitHub</a>
-            <a href="mailto:aligholizadeh8413@gmail.com">Email</a>
-            <!-- اگر لینکدین داری اینجا اضافه کن -->
-        </section>
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__logo" id="top">ali<span>.dev</span></a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#about" class="nav-link" data-nav>About</a>
+      <a href="#projects" class="nav-link" data-nav>Projects</a>
+      <a href="#education" class="nav-link" data-nav>Educations</a>
+      <a href="#contact" class="nav-link" data-nav>Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="btn btn--ghost btn--sm" id="plainResumeBtn" type="button" title="Coming soon">Plain resume</button>
+      <button class="btn btn--primary btn--sm" id="downloadCvBtn" type="button" title="Coming soon">Download CV</button>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__grid">
+
+      <div class="hero__content" data-reveal>
+        <span class="pill">
+          <span class="pill__dot"></span>
+          Open to internships &amp; junior backend roles
+        </span>
+
+        <h1 class="hero__title">
+          Learning backend development<br>
+          by <span class="text-accent">actually building</span> it.
+        </h1>
+
+        <p class="hero__text">
+          I'm Ali — a Computer Science student focused on backend development
+          with Python and Django. Right now I'm deep in a hands-on Python &amp;
+          Django course, turning OOP, design patterns, and unit testing into
+          real, working projects.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View my work</a>
+          <a href="#contact" class="btn btn--outline">Get in touch</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__row"><span class="stat__num" data-count="15">0</span><span class="stat__suffix">+</span></span>
+            <span class="stat__label">Technologies &amp; tools</span>
+          </div>
+          <div class="stat">
+            <span class="stat__row"><span class="stat__num" data-count="3">0</span><span class="stat__suffix">+</span></span>
+            <span class="stat__label">Years writing code</span>
+          </div>
+          <div class="stat">
+            <span class="stat__row"><span class="stat__num">2027</span></span>
+            <span class="stat__label">Expected graduation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" data-reveal data-reveal-delay="1">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--r"></span>
+            <span class="terminal__dot terminal__dot--y"></span>
+            <span class="terminal__dot terminal__dot--g"></span>
+            <span class="terminal__name">ali.py</span>
+          </div>
+          <pre class="terminal__code"><code><span class="tok-kw">class</span> <span class="tok-cls">Ali</span>:
+    <span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-self">self</span>):
+        <span class="tok-self">self</span>.role = <span class="tok-str">"Backend Developer"</span>
+        <span class="tok-self">self</span>.stack = [
+            <span class="tok-str">"Python"</span>, <span class="tok-str">"Django"</span>,
+            <span class="tok-str">"MySQL"</span>, <span class="tok-str">"MongoDB"</span>
+        ]
+        <span class="tok-self">self</span>.still_learning = <span class="tok-kw">True</span>
+
+    <span class="tok-kw">def</span> <span class="tok-fn">status</span>(<span class="tok-self">self</span>):
+        <span class="tok-kw">return</span> <span class="tok-str">"building..."</span><span class="blink">_</span></code></pre>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="stackMarquee"></div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>About me</p>
+      <h2 class="section__title" data-reveal>I'd rather understand the system<br>than just make it run.</h2>
+
+      <div class="about__grid">
+        <div class="about__media" data-reveal data-reveal-delay="1">
+          <div class="photo-frame">
+            <span class="photo-frame__initials">AG</span>
+          </div>
+          <div class="quote-card">
+            <p>"Still learning. Always building."</p>
+            <span>Ali Gholizadeh — CS Student</span>
+          </div>
+        </div>
+
+        <div class="about__content" data-reveal data-reveal-delay="2">
+          <p>
+            I'm Ali, a Computer Science student at Kharazmi University
+            <span class="text-dim">(2023 – 2027)</span> with a strong pull
+            toward backend development. Most of my time goes into Python
+            and Django — not just writing code that runs, but code that's
+            structured, tested, and built to last.
+          </p>
+          <p>
+            Right now I'm taking a hands-on Python &amp; Django Web
+            Development course, and using it as a reason to go deeper into
+            object-oriented programming, design patterns, and unit testing
+            through real, working projects.
+          </p>
+          <p>
+            Outside of the core stack, I'm comfortable with MySQL and
+            MongoDB, currently getting familiar with Redis and RabbitMQ,
+            and spend most of my working hours in Linux and macOS
+            environments.
+          </p>
+
+          <ul class="check-list">
+            <li>Taking a hands-on Python &amp; Django Web Development course</li>
+            <li>Practicing OOP, design patterns and unit testing through real projects</li>
+            <li>Working with MySQL and MongoDB, exploring Redis and RabbitMQ</li>
+            <li>Comfortable in Linux (Ubuntu) and macOS environments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="section education" id="education">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Education</p>
+      <h2 class="section__title" data-reveal>A path built on mathematics first,<br>systems second.</h2>
+
+      <div class="timeline">
+
+        <div class="timeline__item" data-reveal>
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2019 — 2023</span>
+            <h3>Diploma in Mathematics</h3>
+            <p class="timeline__org">National Organization for Development of Exceptional Talents (Sampad)</p>
+            <p>A specialized mathematics track for exceptional talents — where the problem-solving habits that carried into programming first started.</p>
+            <span class="status-tag status-tag--done">Completed</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-reveal data-reveal-delay="1">
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2023 — 2027</span>
+            <h3>B.Sc. in Computer Science</h3>
+            <p class="timeline__org">Kharazmi University</p>
+            <p>Currently in progress, with a growing focus on backend systems, data structures, and software engineering fundamentals.</p>
+            <span class="status-tag status-tag--progress">In progress</span>
+          </div>
+        </div>
+
+        <div class="timeline__item" data-reveal data-reveal-delay="2">
+          <div class="timeline__marker"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">Ongoing</span>
+            <h3>Python &amp; Django Web Development</h3>
+            <p class="timeline__org">Hands-on course</p>
+            <p>A practical course built around OOP, design patterns, unit testing, and shipping real backend projects — not just theory.</p>
+            <span class="status-tag status-tag--progress">In progress</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Selected work</p>
+      <h2 class="section__title" data-reveal>Work I've actually shipped —<br>and what's coming next.</h2>
+
+      <div class="projects__grid">
+
+        <article class="project-card project-card--featured" data-reveal>
+          <div class="project-card__media">
+            <video class="project-video" id="aiodeskVideo" muted loop playsinline preload="metadata"
+                   poster="assets/images/aiodesk-poster.jpg">
+              <source src="assets/videos/aiodesk.mp4" type="video/mp4">
+            </video>
+            <div class="project-video__fallback" id="aiodeskFallback">
+              <span class="project-video__bars" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </span>
+              <p>Video coming soon</p>
+              <span>Drop <code>aiodesk.mp4</code> into <code>assets/videos/</code> to show it here</span>
+            </div>
+            <button class="project-video__play" id="aiodeskPlay" type="button" aria-label="Play video">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Motion / Visual Design</span>
+            <h3>AioDesk</h3>
+            <p>A short motion piece exploring how a desk-focused productivity concept could look and feel in motion — pacing, rhythm, and visual storytelling over code.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-card--soon" data-reveal data-reveal-delay="1">
+          <div class="project-card__media project-card__media--soon">
+            <span class="project-card__soon-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.6l4 2.3-.8 1.4L11 13V7h2z" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Backend / Django</span>
+            <h3>Backend project</h3>
+            <p>A Django-based project currently being built as part of my course work — focused on clean models, tested endpoints, and real data.</p>
+            <span class="status-tag status-tag--progress">In progress</span>
+          </div>
+        </article>
+
+        <article class="project-card project-card--soon" data-reveal data-reveal-delay="2">
+          <div class="project-card__media project-card__media--soon">
+            <span class="project-card__soon-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.6l4 2.3-.8 1.4L11 13V7h2z" fill="currentColor"/></svg>
+            </span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Full stack</span>
+            <h3>More on the way</h3>
+            <p>I add a new project here every time I finish one worth showing. Check back, or see what I'm pushing on GitHub.</p>
+            <span class="status-tag status-tag--progress">In progress</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOOLS ================= -->
+  <section class="section tools" id="tools">
+    <div class="container">
+      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Toolbox</p>
+      <h2 class="section__title" data-reveal>The tools and technologies<br>I actually use.</h2>
+
+      <div class="tools__grid" id="toolsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact">
+    <div class="container contact__grid">
+
+      <div class="contact__info" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__mark"></span>Get in touch</p>
+        <h2 class="section__title">Have a project, internship,<br>or just want to talk backend?</h2>
+        <p class="contact__text">
+          I'm always glad to talk about backend development, learning
+          opportunities, or small projects I can help with. Reach out
+          however is easiest for you.
+        </p>
+
+        <div class="contact__rows">
+          <a class="contact__row" href="mailto:aligholizadeh8413@gmail.com">
+            <span class="contact__icon">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.4 2L12 12.5 19.6 7H4.4zM4 8.4V18h16V8.4l-8 5.6-8-5.6z" fill="currentColor"/></svg>
+            </span>
+            aligholizadeh8413@gmail.com
+          </a>
+          <a class="contact__row" href="https://t.me/AliMGZB" target="_blank" rel="noopener">
+            <span class="contact__icon">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M21.5 4.5L2.7 11.9c-1 .4-1 1.6.1 1.9l4.6 1.5 1.8 5.5c.3.9 1.4 1.1 2 .4l2.6-2.8 4.8 3.6c.8.6 2 .2 2.2-.8l3-16.7c.2-1.1-.9-2-2.3-1.5zM8.5 14.8l9-6.9c.3-.2.6.2.3.4l-7.5 7.4-.3 3.3-1.5-4.2z" fill="currentColor"/></svg>
+            </span>
+            @AliMGZB
+          </a>
+          <div class="contact__row contact__row--static">
+            <span class="contact__icon">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2a7 7 0 00-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 00-7-7zm0 9.8A2.8 2.8 0 1112 6.2a2.8 2.8 0 010 5.6z" fill="currentColor"/></svg>
+            </span>
+            Iran
+          </div>
+        </div>
+
+        <div class="contact__socials">
+          <a href="mailto:aligholizadeh8413@gmail.com" aria-label="Email" class="social-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.4 2L12 12.5 19.6 7H4.4zM4 8.4V18h16V8.4l-8 5.6-8-5.6z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://t.me/AliMGZB" target="_blank" rel="noopener" aria-label="Telegram" class="social-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M21.5 4.5L2.7 11.9c-1 .4-1 1.6.1 1.9l4.6 1.5 1.8 5.5c.3.9 1.4 1.1 2 .4l2.6-2.8 4.8 3.6c.8.6 2 .2 2.2-.8l3-16.7c.2-1.1-.9-2-2.3-1.5zM8.5 14.8l9-6.9c.3-.2.6.2.3.4l-7.5 7.4-.3 3.3-1.5-4.2z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10 10 0 0012 2z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm" data-reveal data-reveal-delay="1"
+            action="mailto:aligholizadeh8413@gmail.com" method="post" enctype="text/plain">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary">Send message</button>
+        <p class="contact__form-note" id="formNote"></p>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="marquee marquee--footer" aria-hidden="true">
+    <div class="marquee__track marquee__track--text">
+      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
+      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
+      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
+    </div>
+  </div>
+
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="nav__logo">ali<span>.dev</span></a>
+      <p>Computer Science student and aspiring backend developer, building with Python and Django — one real project at a time.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Navigate</h4>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Educations</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <a href="mailto:aligholizadeh8413@gmail.com">Email</a>
+      <a href="https://t.me/AliMGZB" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© <span id="year"></span> Ali Gholizadeh. All rights reserved.</span>
+    <span>Built with HTML, CSS &amp; JavaScript.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
