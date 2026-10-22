@@ -62,7 +62,7 @@
 
   // A missing resume has an explicit state, never a broken download link.
   document.querySelectorAll('[data-resume]').forEach(link => {
-    const value = link.dataset.resume === 'cv' ? config.cvUrl : config.plainResumeUrl;
+    const value = config.cvUrl;
     if (value) {
       link.href = value;
       link.removeAttribute('aria-disabled');
@@ -70,7 +70,7 @@
       link.querySelector('span')?.remove();
       if (link.dataset.resume === 'cv') link.setAttribute('download','Ali-Gholizadeh-CV.pdf');
     } else {
-      const message = link.dataset.resume === 'cv' ? 'My CV will be available here soon.' : 'The plain resume is coming soon.';
+      const message = 'My CV will be available here soon.';
       link.addEventListener('click', event => { event.preventDefault(); notify(message); });
       link.addEventListener('keydown', event => {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); notify(message); }
@@ -84,6 +84,7 @@
   document.querySelectorAll('[data-open-project]').forEach(button => button.addEventListener('click', () => {
     dialogTrigger = button;
     previousOverflow = document.body.style.overflow;
+    initializeGallery();
     dialog.showModal();
     document.body.style.overflow = 'hidden';
     dialog.querySelector('.dialog-close').focus();
@@ -94,6 +95,96 @@
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
   dialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; dialogTrigger?.focus(); });
+
+  // Thumbnails load when the project opens; missing screenshots have an honest empty state.
+  const galleryEntries = (config.projectGallery || []).slice(0, 4);
+  const galleryGrid = document.getElementById('gallery-grid');
+  const viewer = document.getElementById('gallery-viewer');
+  const viewerImage = document.getElementById('viewer-image');
+  const galleryCards = [];
+  let galleryInitialized = false;
+  let activeImage = 0;
+  let imageTrigger;
+
+  function initializeGallery() {
+    if (galleryInitialized) return;
+    galleryInitialized = true;
+    galleryEntries.forEach((entry, index) => {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'gallery-card';
+      card.disabled = true;
+      card.style.setProperty('--card-index', index);
+      card.setAttribute('aria-label', `Enlarge ${entry.title}`);
+      card.innerHTML = '<span class="gallery-empty"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg><span>Preview coming soon</span></span><span class="gallery-card-caption"><strong></strong><span></span></span><span class="gallery-expand" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>';
+      card.querySelector('strong').textContent = entry.title;
+      card.querySelector('.gallery-card-caption > span').textContent = entry.description;
+      const img = document.createElement('img');
+      img.alt = entry.title + ' — AioDesk';
+      img.hidden = true;
+      img.decoding = 'async';
+      img.addEventListener('load', () => {
+        card.disabled = false;
+        card.classList.add('has-image');
+        card.querySelector('.gallery-empty').hidden = true;
+        img.hidden = false;
+      });
+      img.addEventListener('error', () => {
+        card.disabled = true;
+        card.classList.remove('has-image');
+        img.hidden = true;
+        card.querySelector('.gallery-empty').hidden = false;
+      });
+      card.prepend(img);
+      galleryGrid.append(card);
+      galleryCards.push(card);
+      card.addEventListener('click', () => {
+        imageTrigger = card;
+        showImage(index);
+        viewer.showModal();
+        viewer.querySelector('.viewer-close').focus();
+      });
+      if (entry.src) img.src = entry.src;
+    });
+  }
+
+  function showImage(index) {
+    activeImage = index;
+    const entry = galleryEntries[index];
+    viewer.classList.add('is-loading');
+    document.getElementById('viewer-error').hidden = true;
+    document.getElementById('viewer-title').textContent = entry.title;
+    document.getElementById('viewer-description').textContent = entry.description;
+    document.getElementById('viewer-count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(galleryEntries.length).padStart(2, '0')} — AIODESK`;
+    viewerImage.alt = entry.title + ' — ' + entry.description;
+    viewerImage.src = entry.src;
+    const navigationDisabled = galleryCards.filter(card => !card.disabled).length < 2;
+    document.getElementById('viewer-previous').disabled = navigationDisabled;
+    document.getElementById('viewer-next').disabled = navigationDisabled;
+  }
+
+  function stepImage(direction) {
+    for (let step = 1; step < galleryEntries.length; step++) {
+      const next = (activeImage + direction * step + galleryEntries.length) % galleryEntries.length;
+      if (!galleryCards[next].disabled) { showImage(next); return; }
+    }
+  }
+  viewerImage.addEventListener('load', () => viewer.classList.remove('is-loading'));
+  viewerImage.addEventListener('error', () => {
+    document.getElementById('viewer-error').hidden = false;
+  });
+  viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+  document.getElementById('viewer-previous').addEventListener('click', () => stepImage(-1));
+  document.getElementById('viewer-next').addEventListener('click', () => stepImage(1));
+  viewer.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); stepImage(-1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); stepImage(1); }
+  });
+  viewer.addEventListener('close', () => { imageTrigger?.focus(); });
+  viewer.addEventListener('click', event => {
+    const rect = viewer.getBoundingClientRect();
+    if (event.target === viewer && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) viewer.close();
+  });
 
   const video = document.getElementById('aiodesk-video');
   if (config.aiodeskVideo) {
