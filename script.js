@@ -97,12 +97,30 @@
 
   const video = document.getElementById('aiodesk-video');
   if (config.aiodeskVideo) {
+    // Set inaudible, inline playback before attaching the source.
+    video.muted = true;
+    video.defaultMuted = true;
+    video.autoplay = true;
+    video.controls = false;
+    video.loop = true;
+    const tryAutoplay = () => {
+      if (video.hidden || video.error || document.hidden) return;
+      const playback = video.play();
+      if (playback) playback.catch(() => {
+        // Respect browser autoplay settings; do not show native controls.
+      });
+    };
+    video.addEventListener('loadedmetadata', () => {
+      if (video.videoWidth && video.videoHeight) {
+        video.parentElement.style.aspectRatio = `${video.videoWidth} / ${video.videoHeight}`;
+      }
+    });
+    video.addEventListener('canplay', tryAutoplay);
     video.src = config.aiodeskVideo;
     video.hidden = false;
     document.getElementById('project-poster').hidden = true;
     document.querySelector('.project-preview').hidden = true;
     document.getElementById('media-label').hidden = true;
-    video.loop = true;
     if (config.aiodeskCaptions) {
       const track = document.createElement('track');
       track.kind = 'captions'; track.label = 'English'; track.srclang = 'en'; track.src = config.aiodeskCaptions;
@@ -113,13 +131,16 @@
       document.getElementById('project-poster').hidden = false;
       document.querySelector('.project-preview').hidden = false;
       document.getElementById('media-label').hidden = false;
+      video.parentElement.style.removeProperty('aspect-ratio');
     });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entries => {
-        if (!entries[0].isIntersecting && !video.paused) video.pause();
+        if (entries[0].isIntersecting) tryAutoplay();
       }, {threshold:0.1}).observe(video);
     }
-    document.addEventListener('visibilitychange', () => { if(document.hidden) video.pause(); });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tryAutoplay(); });
+    window.addEventListener('pageshow', tryAutoplay);
+    tryAutoplay();
   }
 
   document.getElementById('copy-email').addEventListener('click', async () => {
