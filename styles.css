@@ -58,7 +58,7 @@ body.dialog-open {
 /* Load after the existing stylesheets. Only the hero heading is changed. */
 .hero h1.hero-name {
   font-size: clamp(42px, 6.4vw, 88px);
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.055em;
   line-height: 1.05;
   margin: 0;
