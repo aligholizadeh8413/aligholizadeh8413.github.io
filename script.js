@@ -1,6 +1,11 @@
 (() => {
   'use strict';
   const config = window.PORTFOLIO_CONFIG || {};
+  // Older mobile browsers expose addListener instead of addEventListener.
+  function watchMedia(query, listener) {
+    if (query.addEventListener) query.addEventListener('change', listener);
+    else if (query.addListener) query.addListener(listener);
+  }
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const header = document.getElementById('site-header');
   const menuToggle = document.querySelector('.menu-toggle');
@@ -24,7 +29,7 @@
     if (event.key === 'Escape' && !menu.hidden) { setMenu(false); menuToggle.focus(); }
   });
   document.addEventListener('click', event => { if (!menu.hidden && !header.contains(event.target)) setMenu(false); });
-  matchMedia('(min-width: 851px)').addEventListener('change', event => { if(event.matches) setMenu(false); });
+  watchMedia(matchMedia('(min-width: 851px)'), event => { if(event.matches) setMenu(false); });
   let scrollScheduled = false;
   const updateHeader = () => { header.classList.toggle('scrolled', window.scrollY > 100); scrollScheduled = false; };
   window.addEventListener('scroll', () => {
@@ -42,7 +47,7 @@
         });
       }, {threshold:0.08, rootMargin:'0px 0px -25px 0px'});
       document.querySelectorAll('.reveal').forEach(element => reveal.observe(element));
-      reduceMotion.addEventListener('change', event => {
+      watchMedia(reduceMotion, event => {
         if (event.matches) { reveal.disconnect(); document.documentElement.classList.remove('motion-ready'); }
       });
     }
@@ -106,6 +111,13 @@
   let activeImage = 0;
   let imageTrigger;
 
+  function gallerySource(src, retry = false) {
+    const url = new URL(src, document.baseURI);
+    url.searchParams.set('gallery', '4');
+    if (retry) url.searchParams.set('retry', Date.now().toString());
+    return url.href;
+  }
+
   function initializeGallery() {
     if (galleryInitialized) return;
     galleryInitialized = true;
@@ -122,15 +134,21 @@
       const img = document.createElement('img');
       img.alt = entry.title + ' — AioDesk';
       img.hidden = true;
-      img.decoding = 'async';
-      img.addEventListener('load', () => {
+      img.loading = 'eager';
+      const finishLoading = () => {
+        if (!img.naturalWidth) return;
         card.disabled = false;
         card.classList.add('has-image');
         card.querySelector('.gallery-empty').hidden = true;
         img.hidden = false;
-      });
+        card.querySelector('.gallery-empty > span').textContent = 'Preview coming soon';
+        card.setAttribute('aria-label', `Enlarge ${entry.title}`);
+      };
+      img.addEventListener('load', finishLoading);
       img.addEventListener('error', () => {
-        card.disabled = true;
+        card.disabled = false;
+        card.setAttribute('aria-label', `Retry ${entry.title} image`);
+        card.querySelector('.gallery-empty > span').textContent = 'Image unavailable · tap to retry';
         card.classList.remove('has-image');
         img.hidden = true;
         card.querySelector('.gallery-empty').hidden = false;
@@ -139,12 +157,21 @@
       galleryGrid.append(card);
       galleryCards.push(card);
       card.addEventListener('click', () => {
+        if (!card.classList.contains('has-image')) {
+          card.disabled = true;
+          card.querySelector('.gallery-empty > span').textContent = 'Loading image…';
+          img.src = gallerySource(entry.src, true);
+          return;
+        }
         imageTrigger = card;
         showImage(index);
         viewer.showModal();
         viewer.querySelector('.viewer-close').focus();
       });
-      if (entry.src) img.src = entry.src;
+      if (entry.src) {
+        img.src = gallerySource(entry.src);
+        if (img.complete && img.naturalWidth) finishLoading();
+      }
     });
   }
 
@@ -157,8 +184,9 @@
     document.getElementById('viewer-description').textContent = entry.description;
     document.getElementById('viewer-count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(galleryEntries.length).padStart(2, '0')} — AIODESK`;
     viewerImage.alt = entry.title + ' — ' + entry.description;
-    viewerImage.src = entry.src;
-    const navigationDisabled = galleryCards.filter(card => !card.disabled).length < 2;
+    viewerImage.src = galleryCards[index].querySelector('img').src;
+    if (viewerImage.complete && viewerImage.naturalWidth) viewer.classList.remove('is-loading');
+    const navigationDisabled = galleryCards.filter(card => card.classList.contains('has-image')).length < 2;
     document.getElementById('viewer-previous').disabled = navigationDisabled;
     document.getElementById('viewer-next').disabled = navigationDisabled;
   }
@@ -166,7 +194,7 @@
   function stepImage(direction) {
     for (let step = 1; step < galleryEntries.length; step++) {
       const next = (activeImage + direction * step + galleryEntries.length) % galleryEntries.length;
-      if (!galleryCards[next].disabled) { showImage(next); return; }
+      if (galleryCards[next].classList.contains('has-image')) { showImage(next); return; }
     }
   }
   viewerImage.addEventListener('load', () => viewer.classList.remove('is-loading'));

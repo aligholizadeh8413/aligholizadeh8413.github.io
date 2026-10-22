@@ -55,6 +55,47 @@ body.dialog-open {
   overflow:hidden
 }
 
+/* Load AFTER styles.css. Only gallery, project button and skill headings. */
+
+/* The screenshot sets the card height: no fixed-ratio letterboxing. */
+.gallery-grid { align-items: start; }
+.gallery-card.has-image { display: block; aspect-ratio: auto; }
+.gallery-card.has-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+.gallery-card > img[hidden] { display: none; }
+.gallery-card .gallery-empty[hidden] { display: none; }
+
+/* Keep the complete image; scroll the dialog for unusually tall screenshots. */
+.gallery-viewer {
+  box-sizing: border-box;
+  max-height: 94vh;
+  max-height: 94dvh;
+  -webkit-overflow-scrolling: touch;
+}
+#viewer-image { width: 100%; height: auto; max-height: none; }
+.project-dialog {
+  max-height: 90vh;
+  max-height: 90dvh;
+  -webkit-overflow-scrolling: touch;
+}
+.viewer-close { position: sticky; float: right; margin: 14px 14px -54px 0; }
+
+.button[data-open-project] {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #18120c;
+}
+.button[data-open-project]:hover { background: #ff7b43; border-color: #ff7b43; }
+
+.skill-group h3 { font-size: 15px; }
+.skill-group-header > span { font-size: 11px; }
+
+
 a {
   color:inherit;
   text-decoration:none
