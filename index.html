@@ -1,399 +1,153 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Gholizadeh — Backend Developer</title>
-<meta name="description" content="Ali Gholizadeh — Computer Science student and aspiring backend developer working with Python, Django, and real backend systems.">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230a0a0b' stroke='%23ff6a35' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='700' fill='%23ff6a35' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0b0a">
+  <title>Ali Gholizadeh — Backend Developer in the Making</title>
+  <meta name="description" content="Ali Gholizadeh's personal portfolio. Computer Science student, Python and Django learner, and the builder behind AioDesk.">
+  <link rel="canonical" href="https://aligholizadeh8413.github.io/">
+  <meta property="og:title" content="Ali Gholizadeh — Curiosity, turned into code.">
+  <meta property="og:description" content="A computer science student learning backend development by building real projects. Explore AioDesk, my toolkit, and my journey.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aligholizadeh8413.github.io/">
+  <meta property="og:image" content="https://aligholizadeh8413.github.io/assets/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#about">Skip to content</a>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol>
+  </defs></svg>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
-<!-- ================= NAV ================= -->
-<header class="nav" id="nav">
-  <div class="nav__inner container">
-    <a href="#top" class="nav__logo" id="top">ali<span>.dev</span></a>
-
-    <nav class="nav__links" id="navLinks" aria-label="Primary">
-      <a href="#about" class="nav-link" data-nav>About</a>
-      <a href="#projects" class="nav-link" data-nav>Projects</a>
-      <a href="#education" class="nav-link" data-nav>Educations</a>
-      <a href="#contact" class="nav-link" data-nav>Contact</a>
+  <header class="site-header" id="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Ali Gholizadeh, home"><span class="brand-mark" aria-hidden="true">a<span>.</span></span><span>ALI GHOLIZADEH<span class="brand-sub">PERSONAL PORTFOLIO</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#educations">Educations</a><a href="#contacts">Contacts</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="resume-link" data-resume="plain" role="link" aria-disabled="true" tabindex="0" title="Plain resume — coming soon">Plain resume <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="cv-button" data-resume="cv" role="link" aria-disabled="true" tabindex="0" title="Download CV — coming soon">Download CV <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="#about">About <span>01</span></a><a href="#projects">Projects <span>02</span></a><a href="#educations">Educations <span>03</span></a><a href="#contacts">Contacts <span>04</span></a>
+      <div class="mobile-resumes"><a data-resume="plain" role="link" aria-disabled="true" tabindex="0">Plain resume <span>Coming soon</span></a><a data-resume="cv" role="link" aria-disabled="true" tabindex="0">Download CV <span>Coming soon</span></a></div>
     </nav>
+  </header>
 
-    <div class="nav__actions">
-      <button class="btn btn--ghost btn--sm" id="plainResumeBtn" type="button" title="Coming soon">Plain resume</button>
-      <button class="btn btn--primary btn--sm" id="downloadCvBtn" type="button" title="Coming soon">Download CV</button>
-      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="home">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="container hero__grid">
-
-      <div class="hero__content" data-reveal>
-        <span class="pill">
-          <span class="pill__dot"></span>
-          Open to internships &amp; junior backend roles
-        </span>
-
-        <h1 class="hero__title">
-          Learning backend development<br>
-          by <span class="text-accent">actually building</span> it.
-        </h1>
-
-        <p class="hero__text">
-          I'm Ali — a Computer Science student focused on backend development
-          with Python and Django. Right now I'm deep in a hands-on Python &amp;
-          Django course, turning OOP, design patterns, and unit testing into
-          real, working projects.
-        </p>
-
-        <div class="hero__cta">
-          <a href="#projects" class="btn btn--primary">View my work</a>
-          <a href="#contact" class="btn btn--outline">Get in touch</a>
+  <main>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-atmosphere" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow hero-intro"><span class="status-dot"></span> COMPUTER SCIENCE STUDENT &amp; BUILDER</p>
+          <h1 id="hero-title">Curiosity,<br>turned into<br><em>code.</em><span class="hero-asterisk" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></span></h1>
+          <p class="hero-description">I'm Ali. An aspiring backend developer learning<br class="desktop-break"> to build thoughtful systems, one project at a time.</p>
+          <div class="hero-actions"><a class="button button-light" href="#projects">Explore my work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="text-link" href="#contacts">Let's connect <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+          <div class="hero-footnotes"><span><i></i> Python at the core</span><span><i></i> Always a work in progress</span></div>
         </div>
-
-        <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__row"><span class="stat__num" data-count="15">0</span><span class="stat__suffix">+</span></span>
-            <span class="stat__label">Technologies &amp; tools</span>
+        <div class="identity-scene" aria-label="Ali's developer profile">
+          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="floating-label label-top" aria-hidden="true"><span class="tiny-square"></span> BUILD. BREAK. UNDERSTAND.</span>
+          <div class="identity-card">
+            <div class="identity-top"><span class="mono">DEVELOPER PROFILE</span><span class="identity-index">001</span></div>
+            <div class="monogram-art" aria-hidden="true"><div class="monogram-grid"></div><span class="monogram-shadow">AG</span><span class="monogram">AG</span><span class="art-cross cross-one">+</span><span class="art-cross cross-two">+</span><span class="art-coordinate mono">ITERATION 001 / IN PROGRESS</span></div>
+            <div class="identity-name"><h2>Ali Gholizadeh</h2><p>Backend developer in the making</p></div>
+            <div class="identity-bottom"><span><span class="status-dot"></span> OPEN TO LEARNING</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></div>
           </div>
-          <div class="stat">
-            <span class="stat__row"><span class="stat__num" data-count="3">0</span><span class="stat__suffix">+</span></span>
-            <span class="stat__label">Years writing code</span>
-          </div>
-          <div class="stat">
-            <span class="stat__row"><span class="stat__num">2027</span></span>
-            <span class="stat__label">Expected graduation</span>
-          </div>
+          <div class="code-caption" aria-hidden="true"><span class="code-dots"><i></i><i></i><i></i></span><code><span>while</span> curious:<br>&nbsp; learn()<br>&nbsp; build()<br>&nbsp; <b>repeat()</b></code></div>
+          <span class="floating-label label-bottom" aria-hidden="true">LESS THEORY ALONE. MORE BUILDING.</span>
         </div>
       </div>
+      <div class="container hero-bottom"><span class="mono">PYTHON / BACKEND / CONTINUOUS LEARNING</span><a href="#about" class="scroll-cue">Scroll to discover <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a></div>
+    </section>
 
-      <div class="hero__visual" data-reveal data-reveal-delay="1">
-        <div class="terminal">
-          <div class="terminal__bar">
-            <span class="terminal__dot terminal__dot--r"></span>
-            <span class="terminal__dot terminal__dot--y"></span>
-            <span class="terminal__dot terminal__dot--g"></span>
-            <span class="terminal__name">ali.py</span>
-          </div>
-          <pre class="terminal__code"><code><span class="tok-kw">class</span> <span class="tok-cls">Ali</span>:
-    <span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-self">self</span>):
-        <span class="tok-self">self</span>.role = <span class="tok-str">"Backend Developer"</span>
-        <span class="tok-self">self</span>.stack = [
-            <span class="tok-str">"Python"</span>, <span class="tok-str">"Django"</span>,
-            <span class="tok-str">"MySQL"</span>, <span class="tok-str">"MongoDB"</span>
-        ]
-        <span class="tok-self">self</span>.still_learning = <span class="tok-kw">True</span>
+    <div class="stack-strip" aria-label="A few tools I work with"><div class="container stack-strip-inner">
+      <span class="strip-label mono">MY EVERYDAY TOOLKIT</span>
+      <span><img src="assets/icons/python.svg" alt="" width="20" height="20">Python</span><span><img src="assets/icons/django.svg" alt="" width="20" height="20">Django</span><span><img src="assets/icons/linux.svg" alt="" width="20" height="20">Linux</span><span><img src="assets/icons/docker.svg" alt="" width="20" height="20">Docker</span><span><img src="assets/icons/redis.svg" alt="" width="20" height="20">Redis</span><span><img src="assets/icons/git.svg" alt="" width="20" height="20">Git</span>
+    </div></div>
 
-    <span class="tok-kw">def</span> <span class="tok-fn">status</span>(<span class="tok-self">self</span>):
-        <span class="tok-kw">return</span> <span class="tok-str">"building..."</span><span class="blink">_</span></code></pre>
+    <section id="about" class="section about-section container" aria-labelledby="about-title">
+      <div class="section-heading reveal"><p class="eyebrow"><span class="section-dot"></span> 01 / A LITTLE ABOUT ME</p><h2 id="about-title">I like knowing<br>what happens <em>underneath.</em></h2></div>
+      <div class="about-layout">
+        <div class="about-visual reveal" aria-label="A small visual notebook about learning backend development">
+          <div class="notebook-top mono"><span>THE LEARNING LOG</span><span>VOL. 01</span></div>
+          <div class="system-sketch" aria-hidden="true"><span class="sketch-node node-client">request</span><span class="sketch-line line-a"></span><span class="sketch-node node-core">understand<br><b>the system</b></span><span class="sketch-line line-b"></span><span class="sketch-node node-db">response</span><div class="sketch-orbit"></div><div class="sketch-orbit orbit-small"></div></div>
+          <p>Make it work.<br>Understand <em>why.</em></p><span class="notebook-caption mono">NOTES FROM A BACKEND JOURNEY</span>
+        </div>
+        <div class="about-copy reveal">
+          <p class="lead">I'm a Computer Science student at Kharazmi University, drawn to the logic behind the interface.</p>
+          <p>My focus is backend development with Python. I'm learning Django through a hands-on web development course, and putting object-oriented programming, design patterns, and unit testing into practice.</p>
+          <p>AioDesk is where a lot of that curiosity becomes concrete: devices, APIs, sessions, databases, and background jobs—all parts of one system I can build and understand.</p>
+          <p>I enjoy solving problems, exploring new technologies, and learning alongside other people. Most days, you'll find me working in Linux or macOS, making the next small thing work a little better.</p>
+          <div class="about-facts"><div><span class="mono">CURRENT FOCUS</span><strong>Python &amp; backend</strong></div><div><span class="mono">HOW I LEARN</span><strong>By building things</strong></div></div>
+          <a class="underlined-link" href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener noreferrer">Find me on GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ================= MARQUEE ================= -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track" id="stackMarquee"></div>
-  </div>
-
-  <!-- ================= ABOUT ================= -->
-  <section class="section about" id="about">
-    <div class="container">
-      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>About me</p>
-      <h2 class="section__title" data-reveal>I'd rather understand the system<br>than just make it run.</h2>
-
-      <div class="about__grid">
-        <div class="about__media" data-reveal data-reveal-delay="1">
-          <div class="photo-frame">
-            <span class="photo-frame__initials">AG</span>
+    <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading heading-split reveal"><div><p class="eyebrow"><span class="section-dot"></span> 02 / SELECTED WORK</p><h2 id="projects-title">Learning gets real<br>when you <em>build.</em></h2></div><p>One ongoing project.<br>A lot of things to figure out.<br>That's exactly the point.</p></div>
+        <div class="project-ticker" aria-hidden="true"><div><div class="ticker-group"><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b></div><div class="ticker-group"><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b><span>Selected work</span><b><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></b></div></div></div>
+        <article class="project-card reveal">
+          <div class="project-media" id="aiodesk-media">
+            <img id="project-poster" src="assets/aiodesk-poster.svg" alt="Illustrated AioDesk dashboard with device monitoring, ticket status, and activity panels" width="1280" height="800" loading="lazy">
+            <video id="aiodesk-video" poster="assets/aiodesk-poster.svg" controls playsinline preload="none" hidden aria-label="AioDesk project film"></video>
+            <span class="media-label mono" id="media-label"><span class="status-dot"></span> AIODESK / CONCEPT VISUAL</span>
+            <button class="project-preview" type="button" data-open-project aria-label="Read about the AioDesk project"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
           </div>
-          <div class="quote-card">
-            <p>"Still learning. Always building."</p>
-            <span>Ali Gholizadeh — CS Student</span>
-          </div>
-        </div>
-
-        <div class="about__content" data-reveal data-reveal-delay="2">
-          <p>
-            I'm Ali, a Computer Science student at Kharazmi University
-            <span class="text-dim">(2023 – 2027)</span> with a strong pull
-            toward backend development. Most of my time goes into Python
-            and Django — not just writing code that runs, but code that's
-            structured, tested, and built to last.
-          </p>
-          <p>
-            Right now I'm taking a hands-on Python &amp; Django Web
-            Development course, and using it as a reason to go deeper into
-            object-oriented programming, design patterns, and unit testing
-            through real, working projects.
-          </p>
-          <p>
-            Outside of the core stack, I'm comfortable with MySQL and
-            MongoDB, currently getting familiar with Redis and RabbitMQ,
-            and spend most of my working hours in Linux and macOS
-            environments.
-          </p>
-
-          <ul class="check-list">
-            <li>Taking a hands-on Python &amp; Django Web Development course</li>
-            <li>Practicing OOP, design patterns and unit testing through real projects</li>
-            <li>Working with MySQL and MongoDB, exploring Redis and RabbitMQ</li>
-            <li>Comfortable in Linux (Ubuntu) and macOS environments</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= EDUCATION ================= -->
-  <section class="section education" id="education">
-    <div class="container">
-      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Education</p>
-      <h2 class="section__title" data-reveal>A path built on mathematics first,<br>systems second.</h2>
-
-      <div class="timeline">
-
-        <div class="timeline__item" data-reveal>
-          <div class="timeline__marker"></div>
-          <div class="timeline__card">
-            <span class="timeline__date">2019 — 2023</span>
-            <h3>Diploma in Mathematics</h3>
-            <p class="timeline__org">National Organization for Development of Exceptional Talents (Sampad)</p>
-            <p>A specialized mathematics track for exceptional talents — where the problem-solving habits that carried into programming first started.</p>
-            <span class="status-tag status-tag--done">Completed</span>
-          </div>
-        </div>
-
-        <div class="timeline__item" data-reveal data-reveal-delay="1">
-          <div class="timeline__marker"></div>
-          <div class="timeline__card">
-            <span class="timeline__date">2023 — 2027</span>
-            <h3>B.Sc. in Computer Science</h3>
-            <p class="timeline__org">Kharazmi University</p>
-            <p>Currently in progress, with a growing focus on backend systems, data structures, and software engineering fundamentals.</p>
-            <span class="status-tag status-tag--progress">In progress</span>
-          </div>
-        </div>
-
-        <div class="timeline__item" data-reveal data-reveal-delay="2">
-          <div class="timeline__marker"></div>
-          <div class="timeline__card">
-            <span class="timeline__date">Ongoing</span>
-            <h3>Python &amp; Django Web Development</h3>
-            <p class="timeline__org">Hands-on course</p>
-            <p>A practical course built around OOP, design patterns, unit testing, and shipping real backend projects — not just theory.</p>
-            <span class="status-tag status-tag--progress">In progress</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Selected work</p>
-      <h2 class="section__title" data-reveal>Work I've actually shipped —<br>and what's coming next.</h2>
-
-      <div class="projects__grid">
-
-        <article class="project-card project-card--featured" data-reveal>
-          <div class="project-card__media">
-            <video class="project-video" id="aiodeskVideo" muted loop playsinline preload="metadata"
-                   poster="assets/images/aiodesk-poster.jpg">
-              <source src="assets/videos/aiodesk.mp4" type="video/mp4">
-            </video>
-            <div class="project-video__fallback" id="aiodeskFallback">
-              <span class="project-video__bars" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i>
-              </span>
-              <p>Video coming soon</p>
-              <span>Drop <code>aiodesk.mp4</code> into <code>assets/videos/</code> to show it here</span>
-            </div>
-            <button class="project-video__play" id="aiodeskPlay" type="button" aria-label="Play video">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-            </button>
-          </div>
-          <div class="project-card__body">
-            <span class="project-card__tag">Motion / Visual Design</span>
-            <h3>AioDesk</h3>
-            <p>A short motion piece exploring how a desk-focused productivity concept could look and feel in motion — pacing, rhythm, and visual storytelling over code.</p>
-          </div>
+          <div class="project-details"><div><div class="project-kicker mono">PERSONAL PROJECT · IN DEVELOPMENT</div><h3>AioDesk<span>01</span></h3><p>A help desk. A device agent. A reason to keep learning.</p></div><button class="button button-outline" type="button" data-open-project>Inside the project <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+          <div class="project-tags"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>Redis</span><span>RabbitMQ</span><span>Device monitoring</span></div>
         </article>
-
-        <article class="project-card project-card--soon" data-reveal data-reveal-delay="1">
-          <div class="project-card__media project-card__media--soon">
-            <span class="project-card__soon-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.6l4 2.3-.8 1.4L11 13V7h2z" fill="currentColor"/></svg>
-            </span>
-          </div>
-          <div class="project-card__body">
-            <span class="project-card__tag">Backend / Django</span>
-            <h3>Backend project</h3>
-            <p>A Django-based project currently being built as part of my course work — focused on clean models, tested endpoints, and real data.</p>
-            <span class="status-tag status-tag--progress">In progress</span>
-          </div>
-        </article>
-
-        <article class="project-card project-card--soon" data-reveal data-reveal-delay="2">
-          <div class="project-card__media project-card__media--soon">
-            <span class="project-card__soon-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.6l4 2.3-.8 1.4L11 13V7h2z" fill="currentColor"/></svg>
-            </span>
-          </div>
-          <div class="project-card__body">
-            <span class="project-card__tag">Full stack</span>
-            <h3>More on the way</h3>
-            <p>I add a new project here every time I finish one worth showing. Check back, or see what I'm pushing on GitHub.</p>
-            <span class="status-tag status-tag--progress">In progress</span>
-          </div>
-        </article>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= TOOLS ================= -->
-  <section class="section tools" id="tools">
-    <div class="container">
-      <p class="eyebrow" data-reveal><span class="eyebrow__mark"></span>Toolbox</p>
-      <h2 class="section__title" data-reveal>The tools and technologies<br>I actually use.</h2>
-
-      <div class="tools__grid" id="toolsGrid"></div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="section contact" id="contact">
-    <div class="container contact__grid">
-
-      <div class="contact__info" data-reveal>
-        <p class="eyebrow"><span class="eyebrow__mark"></span>Get in touch</p>
-        <h2 class="section__title">Have a project, internship,<br>or just want to talk backend?</h2>
-        <p class="contact__text">
-          I'm always glad to talk about backend development, learning
-          opportunities, or small projects I can help with. Reach out
-          however is easiest for you.
-        </p>
-
-        <div class="contact__rows">
-          <a class="contact__row" href="mailto:aligholizadeh8413@gmail.com">
-            <span class="contact__icon">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.4 2L12 12.5 19.6 7H4.4zM4 8.4V18h16V8.4l-8 5.6-8-5.6z" fill="currentColor"/></svg>
-            </span>
-            aligholizadeh8413@gmail.com
-          </a>
-          <a class="contact__row" href="https://t.me/AliMGZB" target="_blank" rel="noopener">
-            <span class="contact__icon">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M21.5 4.5L2.7 11.9c-1 .4-1 1.6.1 1.9l4.6 1.5 1.8 5.5c.3.9 1.4 1.1 2 .4l2.6-2.8 4.8 3.6c.8.6 2 .2 2.2-.8l3-16.7c.2-1.1-.9-2-2.3-1.5zM8.5 14.8l9-6.9c.3-.2.6.2.3.4l-7.5 7.4-.3 3.3-1.5-4.2z" fill="currentColor"/></svg>
-            </span>
-            @AliMGZB
-          </a>
-          <div class="contact__row contact__row--static">
-            <span class="contact__icon">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2a7 7 0 00-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 00-7-7zm0 9.8A2.8 2.8 0 1112 6.2a2.8 2.8 0 010 5.6z" fill="currentColor"/></svg>
-            </span>
-            Iran
-          </div>
-        </div>
-
-        <div class="contact__socials">
-          <a href="mailto:aligholizadeh8413@gmail.com" aria-label="Email" class="social-btn">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.4 2L12 12.5 19.6 7H4.4zM4 8.4V18h16V8.4l-8 5.6-8-5.6z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://t.me/AliMGZB" target="_blank" rel="noopener" aria-label="Telegram" class="social-btn">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M21.5 4.5L2.7 11.9c-1 .4-1 1.6.1 1.9l4.6 1.5 1.8 5.5c.3.9 1.4 1.1 2 .4l2.6-2.8 4.8 3.6c.8.6 2 .2 2.2-.8l3-16.7c.2-1.1-.9-2-2.3-1.5zM8.5 14.8l9-6.9c.3-.2.6.2.3.4l-7.5 7.4-.3 3.3-1.5-4.2z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.2-.4-1.2.1-2.6 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.4.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10 10 0 0012 2z" fill="currentColor"/></svg>
-          </a>
-        </div>
+    <section id="educations" class="section education-section container" aria-labelledby="education-title">
+      <div class="section-heading heading-split reveal"><div><p class="eyebrow"><span class="section-dot"></span> 03 / EDUCATIONS</p><h2 id="education-title">A foundation in theory.<br>A habit of <em>practice.</em></h2></div><p>Formal education, hands-on learning,<br>and the space where they meet.</p></div>
+      <div class="education-list">
+        <article class="education-row reveal"><span class="education-number mono">01</span><div class="education-main"><div class="education-type mono">BACHELOR'S DEGREE</div><h3>Kharazmi University</h3><p>B.Sc. in Computer Science</p></div><div class="education-meta"><span class="education-current"><span class="status-dot"></span> In progress</span><span class="mono">2023 — 2027</span></div></article>
+        <article class="education-row reveal"><span class="education-number mono">02</span><div class="education-main"><div class="education-type mono">HIGH SCHOOL DIPLOMA</div><h3>National Organization for Development<br class="desktop-break"> of Exceptional Talents</h3><p>Sampad · Mathematics</p></div><div class="education-meta"><span class="education-muted">Completed</span><span class="mono">2019 — 2023</span></div></article>
+        <article class="education-row reveal"><span class="education-number mono">03</span><div class="education-main"><div class="education-type mono">HANDS-ON LEARNING</div><h3>Python &amp; Django Web Development</h3><p>Project-based practice in backend development</p></div><div class="education-meta"><span class="education-current"><span class="status-dot"></span> Currently learning</span><span class="mono">CONTINUOUS</span></div></article>
       </div>
+    </section>
 
-      <form class="contact__form" id="contactForm" data-reveal data-reveal-delay="1"
-            action="mailto:aligholizadeh8413@gmail.com" method="post" enctype="text/plain">
-        <label>
-          Name
-          <input type="text" name="name" placeholder="Your name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" placeholder="you@example.com" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea>
-        </label>
-        <button type="submit" class="btn btn--primary">Send message</button>
-        <p class="contact__form-note" id="formNote"></p>
-      </form>
+    <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title"><div class="container">
+      <div class="section-heading heading-split reveal"><div><p class="eyebrow"><span class="section-dot"></span> THE TOOLKIT</p><h2 id="toolkit-title">Tools I reach for.<br>Skills I keep <em>growing.</em></h2></div><p>Some familiar, some still unfolding.<br>All part of the learning process.</p></div>
+      <div class="skills-grid" id="skills-grid"><article class="skill-group reveal"><div class="skill-group-header"><h3>Languages</h3><span>01</span></div><ul class="skill-list"><li><img src="assets/icons/python.svg" alt="" width="18" height="18" loading="lazy"><span>Python</span></li><li><img src="assets/icons/cplusplus.svg" alt="" width="18" height="18" loading="lazy"><span>C++</span></li><li><img src="assets/icons/javascript.svg" alt="" width="18" height="18" loading="lazy"><span>JavaScript</span></li><li><img src="assets/icons/html5.svg" alt="" width="18" height="18" loading="lazy"><span>HTML5</span></li><li><img src="assets/icons/css.svg" alt="" width="18" height="18" loading="lazy"><span>CSS3</span></li></ul></article>
+<article class="skill-group reveal"><div class="skill-group-header"><h3>Backend & concepts</h3><span>02</span></div><ul class="skill-list"><li><img src="assets/icons/django.svg" alt="" width="18" height="18" loading="lazy"><span>Django</span></li><li><img src="assets/icons/fastapi.svg" alt="" width="18" height="18" loading="lazy"><span>FastAPI</span></li><li><img src="assets/icons/oop.svg" alt="" width="18" height="18" loading="lazy"><span>OOP</span></li><li><img src="assets/icons/patterns.svg" alt="" width="18" height="18" loading="lazy"><span>Design patterns</span></li><li><img src="assets/icons/testing.svg" alt="" width="18" height="18" loading="lazy"><span>Unit testing</span></li><li><img src="assets/icons/selenium.svg" alt="" width="18" height="18" loading="lazy"><span>Selenium</span></li></ul><p class="skill-note">Django: currently learning through hands-on practice.</p></article>
+<article class="skill-group reveal"><div class="skill-group-header"><h3>Data & messaging</h3><span>03</span></div><ul class="skill-list"><li><img src="assets/icons/mysql.svg" alt="" width="18" height="18" loading="lazy"><span>MySQL</span></li><li><img src="assets/icons/mongodb.svg" alt="" width="18" height="18" loading="lazy"><span>MongoDB</span></li><li><img src="assets/icons/sqlite.svg" alt="" width="18" height="18" loading="lazy"><span>SQLite</span></li><li><img src="assets/icons/redis.svg" alt="" width="18" height="18" loading="lazy"><span>Redis</span></li><li><img src="assets/icons/rabbitmq.svg" alt="" width="18" height="18" loading="lazy"><span>RabbitMQ</span></li></ul></article>
+<article class="skill-group reveal"><div class="skill-group-header"><h3>Infrastructure</h3><span>04</span></div><ul class="skill-list"><li><img src="assets/icons/nginx.svg" alt="" width="18" height="18" loading="lazy"><span>NGINX</span></li><li><img src="assets/icons/docker.svg" alt="" width="18" height="18" loading="lazy"><span>Docker</span></li><li><img src="assets/icons/vps.svg" alt="" width="18" height="18" loading="lazy"><span>VPS deployment</span></li><li><img src="assets/icons/githubactions.svg" alt="" width="18" height="18" loading="lazy"><span>CI/CD</span></li></ul></article>
+<article class="skill-group reveal"><div class="skill-group-header"><h3>Tools & environments</h3><span>05</span></div><ul class="skill-list"><li><img src="assets/icons/git.svg" alt="" width="18" height="18" loading="lazy"><span>Git</span></li><li><img src="assets/icons/linux.svg" alt="" width="18" height="18" loading="lazy"><span>Linux</span></li><li><img src="assets/icons/ubuntu.svg" alt="" width="18" height="18" loading="lazy"><span>Ubuntu</span></li><li><img src="assets/icons/apple.svg" alt="" width="18" height="18" loading="lazy"><span>macOS</span></li></ul></article>
+<article class="skill-group reveal"><div class="skill-group-header"><h3>Beyond the backend</h3><span>06</span></div><ul class="skill-list"><li><img src="assets/icons/network.svg" alt="" width="18" height="18" loading="lazy"><span>Network+</span></li><li><img src="assets/icons/photoshop.svg" alt="" width="18" height="18" loading="lazy"><span>Photoshop</span></li><li><img src="assets/icons/illustrator.svg" alt="" width="18" height="18" loading="lazy"><span>Illustrator</span></li></ul><p class="skill-note">A little visual thinking. A wider technical perspective.</p></article></div>
+    </div></section>
 
-    </div>
-  </section>
+    <section id="contacts" class="section contact-section container" aria-labelledby="contact-title">
+      <div class="contact-layout"><div class="contact-copy reveal"><p class="eyebrow"><span class="section-dot"></span> 04 / CONTACTS</p><h2 id="contact-title">Good things start<br>with a <em>hello.</em></h2><p>A project idea, a learning opportunity, or a conversation about building things—I'd love to hear from you.</p><a class="contact-email" href="mailto:aligholizadeh8413@gmail.com">aligholizadeh8413@gmail.com <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><div class="contact-socials"><a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="https://t.me/AliMGZB" target="_blank" rel="noopener noreferrer">Telegram <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><button type="button" id="copy-email">Copy email <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button></div></div>
+        <form class="contact-form reveal" id="contact-form"><div class="form-heading"><span class="mono">LET'S MAKE A CONNECTION</span><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></div><div class="form-grid"><label>Your name<input type="text" name="name" placeholder="What should I call you?" autocomplete="name" maxlength="100" required></label><label>Your email<input type="email" name="email" placeholder="you@example.com" autocomplete="email" maxlength="254" required></label></div><label>What's on your mind?<select name="topic"><option>A project idea</option>A learning opportunity</option>A collaboration</option> <option>Just saying hello</option></select></label><label>Your message<textarea name="message" placeholder="A little context goes a long way…" rows="4" maxlength="2500" required></textarea></label><div class="form-bottom"><button class="button button-orange" type="submit">Let's talk <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><span>Opens your email app.<br>Nothing is stored here.</span></div><p class="form-feedback" id="form-feedback" role="status"></p></form>
+      </div>
+    </section>
+    <div class="closing-banner" aria-hidden="true"><span>Keep learning.</span><span class="banner-star"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></span><span>Keep building.</span><span class="banner-star"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 1v38M1 20h38M6.6 6.6l26.8 26.8M6.6 33.4 33.4 6.6" stroke="currentColor" stroke-width="5"/></svg></span><span>Stay curious.</span></div>
+  </main>
 
-</main>
+  <footer class="site-footer container"><div class="footer-top"><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">a<span>.</span></span><span>ALI GHOLIZADEH<span class="brand-sub">A LITTLE BETTER, EVERY BUILD.</span></span></a><a class="back-top" href="#home">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div><div class="footer-wordmark" aria-hidden="true">always learning.</div><div class="footer-bottom"><span>© <span id="year">2026</span> Ali Gholizadeh</span><span>Built with curiosity. Hosted on GitHub Pages.</span><a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></footer>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="marquee marquee--footer" aria-hidden="true">
-    <div class="marquee__track marquee__track--text">
-      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
-      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
-      <span>Open to opportunities</span><span>Backend Developer</span><span>Python &amp; Django</span>
-    </div>
-  </div>
-
-  <div class="container footer__grid">
-    <div class="footer__brand">
-      <a href="#top" class="nav__logo">ali<span>.dev</span></a>
-      <p>Computer Science student and aspiring backend developer, building with Python and Django — one real project at a time.</p>
-    </div>
-
-    <div class="footer__col">
-      <h4>Navigate</h4>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Educations</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="footer__col">
-      <h4>Connect</h4>
-      <a href="mailto:aligholizadeh8413@gmail.com">Email</a>
-      <a href="https://t.me/AliMGZB" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://github.com/aligholizadeh8413" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-
-  <div class="container footer__bottom">
-    <span>© <span id="year"></span> Ali Gholizadeh. All rights reserved.</span>
-    <span>Built with HTML, CSS &amp; JavaScript.</span>
-  </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-
-<script src="assets/js/main.js"></script>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title"><button class="dialog-close" type="button" aria-label="Close project details"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><div class="dialog-content"><p class="eyebrow"><span class="section-dot"></span> A PERSONAL LEARNING PROJECT</p><h2 id="project-dialog-title">Inside <em>AioDesk.</em></h2><p class="dialog-lead">An ongoing help desk and device-monitoring project built to turn backend concepts into something tangible.</p><div class="dialog-topics"><div><span class="mono">01 / THE APPLICATION</span><h3>A place to manage devices.</h3><p>A FastAPI backend and web dashboard bring device reports, support tickets, and account settings together.</p></div><div><span class="mono">02 / THE CONNECTION</span><h3>An agent on the other side.</h3><p>A Python agent registers with the server and sends device reports. Building both sides helps me understand the whole conversation.</p></div><div><span class="mono">03 / THE BACKGROUND WORK</span><h3>Learning beyond the request.</h3><p>Redis and RabbitMQ are part of the learning journey: sessions, caching, rate limiting, and queued email delivery.</p></div></div><p class="project-note">A personal learning project, actively evolving as I explore the parts of a connected system.</p><a class="button button-orange" href="mailto:aligholizadeh8413@gmail.com?subject=Let%27s%20talk%20about%20AioDesk">Ask me about AioDesk <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

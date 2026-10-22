@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+<defs>
+<radialGradient id="room"><stop stop-color="#503319"/><stop offset="1" stop-color="#100f0b"/></radialGradient>
+<radialGradient id="glow"><stop stop-color="#ce742b" stop-opacity=".65"/><stop offset="1" stop-color="#a9501b" stop-opacity="0"/></radialGradient>
+<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#a69070"/><stop offset=".3" stop-color="#494035"/><stop offset="1" stop-color="#24211b"/></linearGradient>
+<linearGradient id="screen" x2="0" y2="1"><stop stop-color="#1a1e21"/><stop offset="1" stop-color="#101315"/></linearGradient>
+<linearGradient id="area" x2="0" y2="1"><stop stop-color="#4fb2a3" stop-opacity=".3"/><stop offset="1" stop-color="#4fb2a3" stop-opacity="0"/></linearGradient>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="30" stdDeviation="25" flood-opacity=".65"/></filter>
+<filter id="blur"><feGaussianBlur stdDeviation="30"/></filter>
+</defs>
+<rect width="1280" height="800" fill="url(#room)"/>
+<ellipse cx="150" cy="360" rx="400" ry="500" fill="url(#glow)"/>
+<ellipse cx="1090" cy="170" rx="320" ry="300" fill="url(#glow)" opacity=".35"/>
+<path d="M0 691h1280M180 0v690M1083 0v690" stroke="#9d7342" stroke-opacity=".14"/>
+<rect x="86" y="115" width="7" height="470" rx="3" fill="#cd7b35" opacity=".7"/>
+<rect x="82" y="115" width="14" height="470" rx="5" fill="#fb9b43" opacity=".3" filter="url(#blur)"/>
+<ellipse cx="680" cy="728" rx="485" ry="35" fill="#000" opacity=".5" filter="url(#blur)"/>
+<g transform="translate(135 106)" filter="url(#shadow)">
+<rect width="1010" height="580" rx="17" fill="url(#edge)"/>
+<rect x="2" y="2" width="1006" height="576" rx="15" fill="#0b0e10"/>
+<rect x="9" y="10" width="992" height="558" rx="10" fill="url(#screen)"/>
+<path d="M9 51h992" stroke="#303236"/>
+<circle cx="28" cy="31" r="4" fill="#896346"/><circle cx="43" cy="31" r="4" fill="#6b6452"/><circle cx="58" cy="31" r="4" fill="#536657"/>
+<rect x="365" y="22" width="280" height="19" rx="5" fill="#22262a"/>
+<text x="505" y="35" fill="#737c82" font-family="Arial" font-size="8" text-anchor="middle">aiodesk / dashboard</text>
+<rect x="9" y="51" width="159" height="517" fill="#121619"/>
+<text x="31" y="89" fill="#e4e8e8" font-family="Arial" font-size="21" font-weight="bold">aiodesk<tspan fill="#e89750">.</tspan></text>
+<text x="31" y="106" fill="#626f78" font-family="Arial" font-size="7" letter-spacing="1.2">YOUR DEVICES. CONNECTED.</text>
+<rect x="20" y="135" width="135" height="34" rx="6" fill="#2c3937"/>
+<rect x="32" y="147" width="10" height="10" rx="2" fill="none" stroke="#92b9b0"/><text x="55" y="156" font-family="Arial" font-size="10" fill="#d3e1dd">Dashboard</text><rect x="32" y="189" width="10" height="10" rx="2" fill="none" stroke="#657077"/><text x="55" y="198" font-family="Arial" font-size="10" fill="#7f8a90">Devices</text><rect x="32" y="231" width="10" height="10" rx="2" fill="none" stroke="#657077"/><text x="55" y="240" font-family="Arial" font-size="10" fill="#7f8a90">Tickets</text><rect x="32" y="273" width="10" height="10" rx="2" fill="none" stroke="#657077"/><text x="55" y="282" font-family="Arial" font-size="10" fill="#7f8a90">Sites</text><rect x="32" y="315" width="10" height="10" rx="2" fill="none" stroke="#657077"/><text x="55" y="324" font-family="Arial" font-size="10" fill="#7f8a90">Notifications</text><rect x="32" y="357" width="10" height="10" rx="2" fill="none" stroke="#657077"/><text x="55" y="366" font-family="Arial" font-size="10" fill="#7f8a90">Settings</text><circle cx="38" cy="532" r="12" fill="#2b3336"/><text x="38" y="535" font-family="Arial" font-size="8" fill="#99a9b3" text-anchor="middle">AG</text><text x="59" y="529" font-family="Arial" font-size="8" fill="#afb9bf">Ali Gholizadeh</text><text x="59" y="541" font-family="Arial" font-size="7" fill="#65717a">My workspace</text>
+<text x="193" y="89" font-family="Arial" font-size="18" font-weight="bold" fill="#e5e9ed">A little clarity. For every device.</text>
+<text x="193" y="108" font-family="Arial" font-size="8" fill="#7b8790">Device monitoring, support, and the systems that connect them.</text>
+<rect x="876" y="73" width="98" height="27" rx="6" fill="#354b47"/><text x="925" y="90" fill="#c1d9d2" font-family="Arial" font-size="8" text-anchor="middle">Install agent</text>
+<rect x="193" y="133" width="251" height="105" rx="9" fill="#20262b"/><text x="210" y="158" fill="#8e9ba5" font-family="Arial" font-size="9">Total devices</text><text x="210" y="193" fill="#e4e9ec" font-family="Arial" font-size="29">12</text><text x="210" y="217" fill="#687983" font-family="Arial" font-size="7">All connected endpoints</text><circle cx="417" cy="155" r="4" fill="#a1b0bb"/><rect x="458" y="133" width="251" height="105" rx="9" fill="#20262b"/><text x="475" y="158" fill="#8e9ba5" font-family="Arial" font-size="9">Online devices</text><text x="475" y="193" fill="#e4e9ec" font-family="Arial" font-size="29">9</text><text x="475" y="217" fill="#687983" font-family="Arial" font-size="7">Reporting to AioDesk</text><circle cx="682" cy="155" r="4" fill="#4bb7a0"/><rect x="723" y="133" width="251" height="105" rx="9" fill="#20262b"/><text x="740" y="158" fill="#8e9ba5" font-family="Arial" font-size="9">Open tickets</text><text x="740" y="193" fill="#e4e9ec" font-family="Arial" font-size="29">4</text><text x="740" y="217" fill="#687983" font-family="Arial" font-size="7">Ready for attention</text><circle cx="947" cy="155" r="4" fill="#e4ae64"/><rect x="193" y="254" width="514" height="192" rx="9" fill="#1c2227"/><text x="211" y="280" fill="#ced5da" font-family="Arial" font-size="11">Device activity</text><text x="681" y="279" text-anchor="end" fill="#6c7b86" font-family="Arial" font-size="7">LAST 7 DAYS</text>
+<path d="M211 310h475M211 347h475M211 384h475M211 421h475" stroke="#293137" stroke-width="1"/>
+<path d="M211 389C235 389 244 367 266 368S306 384 328 354S368 368 390 341S435 354 454 325S494 341 521 316S565 323 588 303S645 315 686 299V421H211Z" fill="url(#area)"/>
+<path d="M211 389C235 389 244 367 266 368S306 384 328 354S368 368 390 341S435 354 454 325S494 341 521 316S565 323 588 303S645 315 686 299" fill="none" stroke="#60b8a6" stroke-width="2"/>
+<rect x="722" y="254" width="251" height="192" rx="9" fill="#1c2227"/><text x="739" y="280" fill="#ced5da" font-family="Arial" font-size="11">Device availability</text>
+<circle cx="848" cy="356" r="46" fill="none" stroke="#344049" stroke-width="12"/><circle cx="848" cy="356" r="46" fill="none" stroke="#4ba58e" stroke-width="12" stroke-dasharray="217 289" transform="rotate(-90 848 356)"/><text x="848" y="358" text-anchor="middle" fill="#dce8e7" font-family="Arial" font-size="23">75%</text><text x="848" y="373" text-anchor="middle" fill="#728c8a" font-family="Arial" font-size="7">ONLINE</text>
+<text x="787" y="431" fill="#7a8d94" font-family="Arial" font-size="8">9 online</text><text x="865" y="431" fill="#7a8d94" font-family="Arial" font-size="8">3 offline</text>
+<rect x="193" y="461" width="780" height="91" rx="9" fill="#1c2227"/><text x="211" y="483" font-family="Arial" font-size="10" fill="#ced5da">Recent devices</text>
+<path d="M210 495h745" stroke="#2c343b"/><circle cx="218" cy="518" r="3" fill="#59b09a"/><text x="231" y="522" font-family="Arial" font-size="8" fill="#b3c0c7">MacBook · Development</text><text x="433" y="522" font-family="Arial" font-size="8" fill="#74848f">macOS</text><text x="585" y="522" font-family="Arial" font-size="8" fill="#74848f">Agent connected</text><rect x="862" y="508" width="84" height="21" rx="10" fill="#28453d"/><text x="904" y="522" font-family="Arial" font-size="8" text-anchor="middle" fill="#82b9a4">Online</text>
+</g>
+<text x="140" y="748" font-family="Arial" font-size="11" fill="#7d6a52" letter-spacing="2">A PERSONAL PROJECT IN SYSTEMS &amp; BACKEND DEVELOPMENT</text><text x="1140" y="748" font-family="Arial" font-size="9" fill="#7d6a52" text-anchor="end">ILLUSTRATIVE INTERFACE</text>
+</svg>
