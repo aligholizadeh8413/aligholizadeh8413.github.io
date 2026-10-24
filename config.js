@@ -5,7 +5,7 @@
 window.PORTFOLIO_CONFIG = Object.freeze({
   aiodeskVideo: "assets/video/aiodesk-motion.mp4",
   aiodeskCaptions: "", // Optional WebVTT captions for a narrated film.
-  cvUrl: "", // Example: "assets/Ali-Gholizadeh-CV.pdf"
+  cvUrl: "assets/Ali_Gholizadeh_CV.pdf", // Example: "assets/Ali-Gholizadeh-CV.pdf"
   // Put your four screenshots at these paths, or change each src to its filename.
   projectGallery: [
     { src: "assets/aiodesk-dashboard.png", title: "Dashboard", description: "An overview of device activity and support operations." },
